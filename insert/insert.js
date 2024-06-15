@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
     mcl.connect(url, (err, conn) => {
         if (err) console.log("Error in connection :- ", err);
         else {
-            let db = conn.db("nodedb");
+            let db = conn.db("cruddb");
             db.collection("products").insertOne(obj, (err) => {
                 if (err) res.json({ insert: "Error " + err });
                 else {

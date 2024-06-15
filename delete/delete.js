@@ -16,7 +16,7 @@ router.delete("/", (req, res) => {
     mcl.connect(url, (err, conn) => {
         if (err) console.log("Error in connection:- ", err);
         else {
-            let db = conn.db("nodedb");
+            let db = conn.db("cruddb");
             db.collection("products").deleteOne(obj, (err, result) => {
                 if (err) res.json({ delete: "Error " + err });
                 else {

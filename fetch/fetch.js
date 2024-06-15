@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     mcl.connect(url, (err, conn) => {
         if (err) console.log("Error in connection");
         else {
-            let db = conn.db("nodedb");
+            let db = conn.db("cruddb");
             db.collection("products")
                 .find()
                 .toArray((err, array) => {

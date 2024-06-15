@@ -18,7 +18,7 @@ router.put("/", (req, res) => {
     mcl.connect(url, (err, conn) => {
         if (err) console.log("Error in connection :- ", err);
         else {
-            let db = conn.db("nodedb");
+            let db = conn.db("cruddb");
             db.collection("products").updateOne(
                 { p_id },
                 { $set: obj },
